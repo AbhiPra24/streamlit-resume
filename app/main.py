@@ -141,36 +141,3 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
-
-# ── Scroll-Spy & Scroll-Reveal Script ─────────────────────────────────────────
-_js_html = """
-<html><body>
-<script>
-    const parentDoc = window.parent.document;
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                // Update sidebar active state
-                const id = entry.target.id;
-                if (id) {
-                    parentDoc.querySelectorAll('.sidebar-nav-item').forEach(el => {
-                        el.classList.remove('active');
-                        if (el.getAttribute('href') === '#' + id) {
-                            el.classList.add('active');
-                        }
-                    });
-                }
-            }
-        });
-    }, { threshold: 0.2 });
-
-    // Initial delay to wait for Streamlit to render
-    setTimeout(() => {
-        parentDoc.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
-    }, 1500);
-</script>
-</body></html>
-"""
-_js_url = "data:text/html;base64," + base64.b64encode(_js_html.encode()).decode()
-st.iframe(src=_js_url, height=1)
