@@ -1,6 +1,7 @@
 """Interactive terminal component with typewriter animation."""
+import base64
 import streamlit as st
-import streamlit as _st
+from app.utils.helpers import section_header
 
 
 TERMINAL_HTML = """
@@ -187,14 +188,6 @@ run();
 
 def render_terminal() -> None:
     """Render the interactive fake terminal with typewriter animation."""
-    st.markdown(
-        """
-        <div class="section-header" id="terminal">
-            <span style="font-size:1.3rem;">🖥️</span>
-            <span class="section-header-text">Interactive Terminal</span>
-            <div class="section-header-line"></div>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
-    _st.iframe(srcdoc=TERMINAL_HTML, height=460, scrolling=False)
+    section_header("fas fa-terminal", "Interactive Terminal")
+    _data_url = "data:text/html;base64," + base64.b64encode(TERMINAL_HTML.encode()).decode()
+    st.iframe(src=_data_url, height=460)

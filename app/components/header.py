@@ -11,19 +11,19 @@ def render_header(data: dict) -> None:
             <div class="hero-title">{data['title']}</div>
             <div class="contact-pills">
                 <a class="contact-pill" href="mailto:{data['email']}">
-                    📧 {data['email']}
+                    <i class="fas fa-envelope"></i> &nbsp;{data['email']}
                 </a>
                 <a class="contact-pill" href="tel:{data['phone']}">
-                    📱 {data['phone']}
+                    <i class="fas fa-phone"></i> &nbsp;{data['phone']}
                 </a>
                 <span class="contact-pill">
-                    📍 {data['location']}
+                    <i class="fas fa-map-marker-alt"></i> &nbsp;{data['location']}
                 </span>
                 <a class="contact-pill" href="{data['linkedin_url']}" target="_blank">
-                    💼 {data['linkedin']}
+                    <i class="fab fa-linkedin"></i> &nbsp;{data['linkedin']}
                 </a>
                 <a class="contact-pill" href="{data['github_url']}" target="_blank">
-                    🐙 GitHub
+                    <i class="fab fa-github"></i> &nbsp;GitHub
                 </a>
             </div>
         </div>
@@ -36,10 +36,11 @@ def render_header(data: dict) -> None:
     cols = st.columns(len(stats))
     for col, stat in zip(cols, stats):
         with col:
+            icon_html = f'<i class="{stat["icon"]}"></i>' if "fa-" in stat["icon"] else stat["icon"]
             st.markdown(
                 f"""
-                <div class="stat-card">
-                    <div class="stat-icon">{stat['icon']}</div>
+                <div class="stat-card scroll-reveal">
+                    <div class="stat-icon">{icon_html}</div>
                     <div class="stat-value">{stat['value']}</div>
                     <div class="stat-label">{stat['label']}</div>
                 </div>

@@ -4,6 +4,7 @@ Abhinav Prakash | Senior SDET & AI Automation Engineer
 """
 import sys
 import os
+import base64
 
 # Ensure project root is on sys.path so `app.*` imports work when
 # Streamlit runs this file directly (e.g. `streamlit run app/main.py`)
@@ -46,7 +47,11 @@ with st.sidebar:
     st.markdown(
         """
         <div class="sidebar-profile">
-            <div class="sidebar-avatar">👨‍💻</div>
+            <div class="sidebar-avatar">
+                <svg width="40" height="40" viewBox="0 0 100 100">
+                    <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-size="45" font-family="Inter, sans-serif" font-weight="900" fill="#ffffff">AP</text>
+                </svg>
+            </div>
             <div class="sidebar-name">Abhinav Prakash</div>
             <div class="sidebar-title">Senior SDET & AI Engineer</div>
         </div>
@@ -55,46 +60,44 @@ with st.sidebar:
     )
     st.divider()
 
-    st.markdown("**🧭 Navigate**")
+    st.markdown('**<i class="fas fa-compass"></i> &nbsp;Navigate**', unsafe_allow_html=True)
     nav_items = [
-        ("🏠", "Home"),
-        ("🖥️", "Terminal"),
-        ("💡", "Summary"),
-        ("🚀", "Projects"),
-        ("💼", "Experience"),
-        ("🧠", "Skills"),
-        ("🎓", "Education"),
-        ("📜", "Certifications"),
+        ("fas fa-home", "Home"),
+        ("fas fa-terminal", "Terminal"),
+        ("fas fa-list-alt", "Summary"),
+        ("fas fa-rocket", "Projects"),
+        ("fas fa-briefcase", "Experience"),
+        ("fas fa-code", "Skills"),
+        ("fas fa-graduation-cap", "Education"),
+        ("fas fa-certificate", "Certifications"),
     ]
     for icon, label in nav_items:
         st.markdown(
-            f'<a href="#{label.lower()}" class="sidebar-nav-item">{icon} &nbsp;{label}</a>',
+            f'<a href="#{label.lower()}" class="sidebar-nav-item"><i class="{icon}"></i> &nbsp;{label}</a>',
             unsafe_allow_html=True,
         )
 
     st.divider()
 
-    st.markdown("**📥 Download**")
-    # Print-to-PDF via browser
-    st.iframe(
-        srcdoc="""
-        <html><body style="margin:0;background:transparent;">
-        <button onclick="window.print()"
-                style="
-                    width:100%; padding:10px 0; border:none; border-radius:100px;
-                    background:linear-gradient(135deg,#00d4ff,#8b5cf6);
-                    color:#070b14; font-weight:700; font-size:14px;
-                    cursor:pointer; font-family:Inter,sans-serif;
-                    transition:opacity 0.2s;
-                "
-                onmouseover="this.style.opacity=0.85"
-                onmouseout="this.style.opacity=1">
-            📄 Save as PDF
-        </button>
-        </body></html>
-        """,
-        height=50,
-    )
+    st.markdown('**<i class="fas fa-download"></i> &nbsp;Download**', unsafe_allow_html=True)
+    # Print-to-PDF via browser — use base64 data URL (st.iframe requires src URL)
+    _pdf_html = """
+    <html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </head>
+    <body style="margin:0;padding:0;background:transparent;">
+    <button onclick="window.print()"
+            style="width:100%;padding:10px 0;border:none;border-radius:100px;
+                   background:linear-gradient(135deg,#00d4ff,#8b5cf6);
+                   color:#070b14;font-weight:700;font-size:14px;
+                   cursor:pointer;font-family:Inter,sans-serif;">
+        <i class="fas fa-file-pdf"></i> &nbsp;Save as PDF
+    </button>
+    </body></html>
+    """
+    _pdf_url = "data:text/html;base64," + base64.b64encode(_pdf_html.encode()).decode()
+    st.iframe(src=_pdf_url, height=50)
 
     st.divider()
     st.markdown(
@@ -138,3 +141,36 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+
+# ── Scroll-Spy & Scroll-Reveal Script ─────────────────────────────────────────
+_js_html = """
+<html><body>
+<script>
+    const parentDoc = window.parent.document;
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                // Update sidebar active state
+                const id = entry.target.id;
+                if (id) {
+                    parentDoc.querySelectorAll('.sidebar-nav-item').forEach(el => {
+                        el.classList.remove('active');
+                        if (el.getAttribute('href') === '#' + id) {
+                            el.classList.add('active');
+                        }
+                    });
+                }
+            }
+        });
+    }, { threshold: 0.2 });
+
+    // Initial delay to wait for Streamlit to render
+    setTimeout(() => {
+        parentDoc.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+    }, 1500);
+</script>
+</body></html>
+"""
+_js_url = "data:text/html;base64," + base64.b64encode(_js_html.encode()).decode()
+st.iframe(src=_js_url, height=1)

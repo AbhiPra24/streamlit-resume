@@ -13,10 +13,11 @@ def load_css(path: str) -> None:
 
 def section_header(icon: str, title: str) -> None:
     """Render a styled section header."""
+    icon_html = f'<i class="{icon}" style="font-size:1.3rem;"></i>' if "fa-" in icon else f'<span style="font-size:1.3rem;">{icon}</span>'
     st.markdown(
         f"""
-        <div class="section-header" id="{title.lower()}">
-            <span style="font-size:1.3rem;">{icon}</span>
+        <div class="section-header scroll-reveal" id="{title.lower()}">
+            {icon_html}
             <span class="section-header-text">{title}</span>
             <div class="section-header-line"></div>
         </div>

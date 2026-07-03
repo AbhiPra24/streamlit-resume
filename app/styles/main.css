@@ -4,6 +4,7 @@
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
 /* ── CSS Variables ── */
 :root {
@@ -20,13 +21,14 @@
 
   --text-primary:   #e2e8f0;
   --text-secondary: #94a3b8;
-  --text-muted:     #475569;
+  --text-muted:     #64748b;
 
   --border-cyan:   rgba(0, 212, 255, 0.15);
-  --border-card:   rgba(255, 255, 255, 0.06);
+  --border-card:   transparent;
 
   --shadow-glow:   0 0 40px rgba(0, 212, 255, 0.08);
-  --shadow-card:   0 4px 24px rgba(0, 0, 0, 0.5);
+  --shadow-card:   0 10px 30px -10px rgba(0, 0, 0, 0.6), 0 4px 10px -4px rgba(0, 0, 0, 0.4);
+  --shadow-hover:  0 20px 40px -10px rgba(0, 212, 255, 0.15), 0 8px 16px -4px rgba(0, 0, 0, 0.5);
   --radius-card:   14px;
   --radius-pill:   100px;
 }
@@ -76,8 +78,8 @@ h1, h2, h3, h4, h5 {
 .section-header-text {
   font-size: 1rem;
   font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-transform: capitalize;
   color: var(--accent-cyan);
 }
 .section-header-line {
@@ -102,9 +104,9 @@ h1, h2, h3, h4, h5 {
 .hero-container::before {
   content: '';
   position: absolute;
-  top: -60px; left: 50%; transform: translateX(-50%);
-  width: 300px; height: 300px;
-  background: radial-gradient(circle, rgba(0,212,255,0.07) 0%, transparent 70%);
+  top: -100px; left: 50%; transform: translateX(-50%);
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(0,212,255,0.15) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -173,10 +175,10 @@ h1, h2, h3, h4, h5 {
 }
 .stat-card:hover {
   border-color: var(--accent-cyan);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 30px rgba(0,212,255,0.1);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
 }
-.stat-icon { font-size: 1.6rem; margin-bottom: 0.4rem; }
+.stat-icon { font-size: 1.6rem; margin-bottom: 0.4rem; color: var(--accent-cyan); }
 .stat-value {
   font-size: 2rem;
   font-weight: 800;
@@ -201,8 +203,8 @@ h1, h2, h3, h4, h5 {
 }
 .summary-card:hover {
   border-color: rgba(139,92,246,0.3);
-  box-shadow: 0 8px 30px rgba(139,92,246,0.08);
-  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px);
 }
 .summary-card p { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7; margin: 0; }
 .summary-card strong { color: var(--text-primary); }
@@ -220,7 +222,7 @@ h1, h2, h3, h4, h5 {
 }
 .project-card:hover {
   border-left-color: var(--accent-cyan);
-  box-shadow: 0 8px 30px rgba(0,212,255,0.07);
+  box-shadow: var(--shadow-hover);
   transform: translateX(4px);
 }
 .project-title { font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
@@ -390,10 +392,21 @@ h1, h2, h3, h4, h5 {
   border: 1px solid transparent;
   font-family: 'Inter', sans-serif;
 }
-.sidebar-nav-item:hover {
+.sidebar-nav-item:hover, .sidebar-nav-item.active {
   background: rgba(0,212,255,0.07);
   border-color: var(--border-cyan);
   color: var(--accent-cyan);
+}
+
+/* ── Scroll Reveal ── */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ── Print Styles ── */

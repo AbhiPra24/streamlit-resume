@@ -86,13 +86,13 @@ RESUME_DATA = {
             "degree": "PGP, Cyber Security",
             "institution": "Indian Institute of Technology, Roorkee",
             "duration": "Jul 2023 – Mar 2024",
-            "icon": "🏛️",
+            "icon": "fas fa-university",
         },
         {
             "degree": "B.Tech, Electronics & Communications Engineering",
             "institution": "Jaypee Institute Of Information Technology",
             "duration": "2017 – 2021",
-            "icon": "🎓",
+            "icon": "fas fa-graduation-cap",
         },
     ],
 
@@ -100,40 +100,40 @@ RESUME_DATA = {
         "AI & LLM Infrastructure": {
             "tags": ["Model Context Protocol (MCP)", "Custom Agents", "Gemini CLI", "Copilot CLI", "OpenAI API", "LangChain"],
             "proficiency": 88,
-            "color": "#8b5cf6",
+            "color": "#00d4ff",
         },
         "Frameworks & Languages": {
             "tags": ["Python", "Java", "Pytest", "Playwright", "Selenium", "FastAPI", "Streamlit"],
             "proficiency": 92,
-            "color": "#00d4ff",
+            "color": "#8b5cf6",
         },
         "DevOps & Infrastructure": {
             "tags": ["Unix", "Shell Scripting", "Docker", "Jenkins", "Git", "CI/CD", "Linux"],
             "proficiency": 83,
-            "color": "#10b981",
+            "color": "#00d4ff",
         },
         "Databases & Security": {
             "tags": ["PostgreSQL", "RDBMS", "Wireshark", "Burp Suite", "Network Monitoring"],
             "proficiency": 78,
-            "color": "#f59e0b",
+            "color": "#8b5cf6",
         },
         "Protocols & APIs": {
             "tags": ["REST API", "Postman", "Swagger", "OCPP 1.6/2.0", "API Security"],
             "proficiency": 87,
-            "color": "#ef4444",
+            "color": "#00d4ff",
         },
     },
 
     "certifications": [
-        {"name": "Learning Jenkins", "icon": "⚙️"},
-        {"name": "5 Common Test Failures", "icon": "🧪"},
-        {"name": "Data Structures and Algorithms – Coding Blocks", "icon": "🧠"},
+        {"name": "Learning Jenkins", "icon": "fas fa-cog"},
+        {"name": "5 Common Test Failures", "icon": "fas fa-flask"},
+        {"name": "Data Structures and Algorithms – Coding Blocks", "icon": "fas fa-code"},
     ],
 
     "stats": [
-        {"label": "Years Experience", "value": "5+", "icon": "⚡"},
-        {"label": "Faster Deployments", "value": "40%", "icon": "🚀"},
-        {"label": "Triage Time Reduction", "value": "30%", "icon": "🎯"},
-        {"label": "Manual Effort Saved", "value": "25%", "icon": "🤖"},
+        {"label": "Years Experience", "value": "5+", "icon": "fas fa-bolt"},
+        {"label": "Faster Deployments", "value": "40%", "icon": "fas fa-rocket"},
+        {"label": "Triage Time Reduction", "value": "30%", "icon": "fas fa-bullseye"},
+        {"label": "Manual Effort Saved", "value": "25%", "icon": "fas fa-robot"},
     ],
 }
