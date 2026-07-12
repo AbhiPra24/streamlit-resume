@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abhinav Prakash | Senior SDET & AI Engineer</title>
+<meta name="description" content="Abhinav Prakash — Senior SDET &amp; AI Automation Engineer. Interactive resume.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="css/style.css">
+<!-- keep in sync with app/data/resume.py -->
+</head>
+<body>
+
+<nav class="topnav">
+  <a class="topnav-brand" href="#home">
+    <span class="topnav-avatar">AP</span>
+    Abhinav Prakash
+  </a>
+  <button class="topnav-toggle" id="navToggle" aria-label="Toggle navigation">
+    <i class="fas fa-bars"></i>
+  </button>
+  <div class="topnav-links" id="navLinks">
+    <a href="#home">Home</a>
+    <a href="#terminal">Terminal</a>
+    <a href="#now">Now</a>
+    <a href="#summary">Summary</a>
+    <a href="#projects">Projects</a>
+    <a href="#github">GitHub</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#writing">Writing</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- ── Hero ── -->
+  <div class="hero-container" id="home">
+    <div class="hero-name">Abhinav Prakash</div>
+    <div class="hero-title">Senior SDET &amp; AI Automation Engineer</div>
+    <div class="contact-pills">
+      <a class="contact-pill" href="mailto:abhinavprakash616@gmail.com"><i class="fas fa-envelope"></i> &nbsp;abhinavprakash616@gmail.com</a>
+      <a class="contact-pill" href="tel:+919457548199"><i class="fas fa-phone"></i> &nbsp;+91 94575 48199</a>
+      <span class="contact-pill"><i class="fas fa-map-marker-alt"></i> &nbsp;Noida, India</span>
+      <a class="contact-pill" href="https://linkedin.com/in/abhipra24" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> &nbsp;linkedin.com/in/abhipra24</a>
+      <a class="contact-pill" href="https://github.com/AbhiPra24" target="_blank" rel="noopener"><i class="fab fa-github"></i> &nbsp;GitHub</a>
+    </div>
+    <div class="actions-row">
+      <a class="btn-gradient" href="Abhinav_Prakash_Resume.pdf" download><i class="fas fa-download"></i> &nbsp;Download Resume (PDF)</a>
+      <button class="btn-gradient" onclick="window.print()"><i class="fas fa-file-pdf"></i> &nbsp;Save as PDF</button>
+    </div>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-card scroll-reveal">
+      <div class="stat-icon"><i class="fas fa-bolt"></i></div>
+      <div class="stat-value">5+</div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+    <div class="stat-card scroll-reveal">
+      <div class="stat-icon"><i class="fas fa-rocket"></i></div>
+      <div class="stat-value">40%</div>
+      <div class="stat-label">Faster Deployments</div>
+    </div>
+    <div class="stat-card scroll-reveal">
+      <div class="stat-icon"><i class="fas fa-bullseye"></i></div>
+      <div class="stat-value">30%</div>
+      <div class="stat-label">Triage Time Reduction</div>
+    </div>
+    <div class="stat-card scroll-reveal">
+      <div class="stat-icon"><i class="fas fa-robot"></i></div>
+      <div class="stat-value">25%</div>
+      <div class="stat-label">Manual Effort Saved</div>
+    </div>
+  </div>
+
+  <!-- ── Terminal ── -->
+  <div class="section-header scroll-reveal" id="terminal">
+    <i class="fas fa-terminal"></i>
+    <span class="section-header-text">Interactive Terminal</span>
+    <div class="section-header-line"></div>
+  </div>
+  <div class="terminal scroll-reveal">
+    <div class="t-header">
+      <div class="dot dr"></div>
+      <div class="dot dy"></div>
+      <div class="dot dg"></div>
+      <span class="t-title">abhipra24@portfolio — bash — 120×30</span>
+    </div>
+    <div class="t-body" id="tbody"></div>
+  </div>
+
+  <!-- ── Now ── -->
+  <div class="section-header scroll-reveal" id="now">
+    <i class="fas fa-satellite-dish"></i>
+    <span class="section-header-text">Now</span>
+    <div class="section-header-line"></div>
+  </div>
+  <div class="now-card scroll-reveal">
+    <div class="now-updated"><i class="fas fa-clock"></i> &nbsp;Updated July 2026</div>
+    <ul class="bullet-list">
+      <li>Deep in MCP (Model Context Protocol) server development for internal ChargePoint tooling — bridging LLMs with local dev environments and station simulators.</li>
+      <li>Exploring multi-agent orchestration patterns for automated test triage and CI/CD failure analysis.</li>
+      <li>Studying advanced OCPP 2.0.1 conformance edge cases for EV charging power-sharing (DLM) validation.</li>
+    </ul>
+  </div>
+
+  <!-- ── Summary ── -->
+  <div class="section-header scroll-reveal" id="summary">
+    <i class="fas fa-list-alt"></i>
+    <span class="section-header-text">Summary</span>
+    <div class="section-header-line"></div>
+  </div>
+  <div class="summary-grid">
+    <div class="summary-card scroll-reveal">
+      <div class="summary-icon"><i class="fas fa-bolt"></i></div>
+      <p>Senior SDET &amp; AI Automation Engineer with <strong>5 years</strong> of experience building high-performance test infrastructure, AI-driven developer tools, and shared engineering utilities for complex hardware-software ecosystems.</p>
+    </div>
+    <div class="summary-card scroll-reveal">
+      <div class="summary-icon"><i class="fas fa-robot"></i></div>
+      <p>Specialized in the <strong>Model Context Protocol (MCP)</strong>, developing custom MCP servers and agents to bridge LLMs with local development environments — plus deep expertise in DevSecOps (IIT Roorkee PGP) with tools like Burp Suite and Wireshark integrated into automated pipelines.</p>
+    </div>
+    <div class="summary-card scroll-reveal">
+      <div class="summary-icon"><i class="fas fa-rocket"></i></div>
+      <p>Expert in Python-based AI orchestration — building custom agents for Copilot CLI and Gemini CLI, automating complex engineering workflows, and architecting CI/CD pipelines with <strong>40% faster deployment cycles</strong>.</p>
+    </div>
+  </div>
+
+  <!-- ── Projects ── -->
+  <div class="section-header scroll-reveal" id="projects">
+    <i class="fas fa-rocket"></i>
+    <span class="section-header-text">Technical Projects</span>
+    <div class="section-header-line"></div>
+  </div>
+  <div class="project-card scroll-reveal">
+    <div class="project-title">AI Agent Ecosystem &amp; MCP Servers</div>
+    <div class="project-duration"><i class="fas fa-clock"></i> &nbsp;Jan 2026 – Present</div>
+    <div class="project-tags">
+      <span class="tag">MCP</span><span class="tag">LLM</span><span class="tag">Gemini CLI</span><span class="tag">Copilot CLI</span><span class="tag">AI Agents</span>
+    </div>
+    <ul class="bullet-list">
+      <li>Engineered a custom <strong>MCP Server</strong> to expose localized system data and private documentation to LLMs, enabling context-aware code generation and automated debugging.</li>
+      <li>Developed a suite of <strong>Custom Agents</strong> for Copilot CLI and Gemini CLI, automating repetitive CLI tasks and providing intelligent terminal-based reasoning for system configurations.</li>
+      <li>Built <strong>AI-native Skills</strong> that integrate with agentic workflows to perform automated API contract testing and vulnerability scanning.</li>
+    </ul>
+  </div>
+  <div class="project-card scroll-reveal">
+    <div class="project-title">DevUtils &amp; ARM (Automation Resource Management)</div>
+    <div class="project-duration"><i class="fas fa-clock"></i> &nbsp;ChargePoint — Internal</div>
+    <div class="project-tags">
+      <span class="tag">FastAPI</span><span class="tag">Streamlit</span><span class="tag">Python</span><span class="tag">Log Analysis</span><span class="tag">AI</span>
+    </div>
+    <ul class="bullet-list">
+      <li>Architected an internal AI-integrated toolbox using <strong>FastAPI and Streamlit</strong> for deep log parsing and pattern recognition in complex Unix hardware-software logs.</li>
+      <li>Implemented intelligent API simulations that reduced defect triage time by <strong>30%</strong> by predicting potential failure points in EV charging logic.</li>
+      <li>Built shared engineering utilities for system setups, deep log analysis, and test orchestration across cross-functional teams.</li>
+    </ul>
+  </div>
+
+  <!-- ── GitHub ── -->
+  <div class="section-header scroll-reveal" id="github">
+    <i class="fab fa-github"></i>
+    <span class="section-header-text">GitHub</span>
+    <div class="section-header-line"></div>
+  </div>
+  <a class="project-card github-card scroll-reveal" href="https://github.com/AbhiPra24/streamlit-resume" target="_blank" rel="noopener">
+    <div class="project-title"><i class="fab fa-github"></i> &nbsp;streamlit-resume</div>
+    <p class="github-description">This site — an interactive resume built with Streamlit, Plotly, and a dark-neon design system.</p>
+    <div class="project-tags">
+      <span class="tag">Python</span>
+      <span class="tag"><i class="fas fa-star"></i> &nbsp;0</span>
+    </div>
+  </a>
+
+  <!-- ── Experience ── -->
+  <div class="section-header scroll-reveal" id="experience">
+    <i class="fas fa-briefcase"></i>
+    <span class="section-header-text">Experience</span>
+    <div class="section-header-line"></div>
+  </div>
+  <div class="timeline-container">
+    <div class="timeline-item scroll-reveal">
+      <div class="timeline-dot" style="border-color:#00d4ff; box-shadow: 0 0 10px #00d4ff40;"></div>
+      <div class="timeline-card" style="border-top: 2px solid #00d4ff20;">
+        <div class="job-header">
+          <span class="job-title">Senior Software QA Engineer</span>
+          <span class="job-duration"><i class="fas fa-calendar-alt"></i> Apr 2025 – Present</span>
+        </div>
+        <div class="job-company" style="color:#00d4ff;"><i class="fas fa-building"></i> ChargePoint &nbsp;·&nbsp; Gurugram, India</div>
+        <ul class="bullet-list">
+          <li>Served as technical project QA lead, shifting the team toward <strong>AI-augmented testing</strong> and automated infrastructure management for critical EV charging releases.</li>
+          <li>Spearheaded 'DevUtils' and 'ARM' — Python, FastAPI, and Streamlit-based shared utilities for system setups, deep log analysis, and test orchestration, <strong>reducing defect triage time by 30%</strong>.</li>
+          <li>Integrated LLM-based analysis into Jenkins CI/CD pipelines to automatically categorize and prioritize test failures, achieving <strong>40% faster regression cycles</strong>.</li>
+          <li>Validated complex embedded systems logic including power-sharing algorithms and secure firmware updates over OCPP protocols.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="timeline-item scroll-reveal">
+      <div class="timeline-dot" style="border-color:#8b5cf6; box-shadow: 0 0 10px #8b5cf640;"></div>
+      <div class="timeline-card" style="border-top: 2px solid #8b5cf620;">
+        <div class="job-header">
+          <span class="job-title">Software QA Engineer</span>
+          <span class="job-duration"><i class="fas fa-calendar-alt"></i> Apr 2022 – Apr 2025</span>
+        </div>
+        <div class="job-company" style="color:#8b5cf6;"><i class="fas fa-building"></i> ChargePoint &nbsp;·&nbsp; Gurugram, India</div>
+        <ul class="bullet-list">
+          <li>Developed custom Python and Shell scripts to continuously parse Unix system logs and query RDBMS tables, cutting defect triage time by <strong>30%</strong>.</li>
+          <li>Designed scalable test frameworks from scratch using Python and Playwright, <strong>reducing manual infrastructure setup and test effort by 25%</strong>.</li>
+          <li>Embedded security checks using Wireshark and Burp Suite to monitor network traffic and validate API security during automated runs.</li>
+          <li>Executed comprehensive backend testing and automated high-priority REST API workflows ensuring fault-tolerant communication between edge devices and cloud services.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="timeline-item scroll-reveal">
+      <div class="timeline-dot" style="border-color:#10b981; box-shadow: 0 0 10px #10b98140;"></div>
+      <div class="timeline-card" style="border-top: 2px solid #10b98120;">
+        <div class="job-header">
+          <span class="job-title">Programmer Analyst Trainee</span>
+          <span class="job-duration"><i class="fas fa-calendar-alt"></i> Feb 2021 – Mar 2022</span>
+        </div>
+        <div class="job-company" style="color:#10b981;"><i class="fas fa-building"></i> Cognizant</div>
+        <ul class="bullet-list">
+          <li>Automated critical UI test cases for CVS Health projects using Selenium with Java, <strong>improving pipeline reliability and test coverage</strong>.</li>
+          <li>Contributed to framework enhancements and execution pipelines, supporting Agile delivery cycles and improving overall CI efficiency.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Skills ── -->
+  <div class="section-header scroll-reveal" id="skills">
+    <i class="fas fa-brain"></i>
+    <span class="section-header-text">Skills</span>
+    <div class="section-header-line"></div>
+  </div>
+  <div class="radar-wrap scroll-reveal">
+    <canvas id="skills-radar"></canvas>
+  </div>
+
+  <div class="skill-bar-container scroll-reveal">
+    <div class="skill-bar-header"><span class="skill-bar-label">AI &amp; LLM Infrastructure</span><span class="skill-bar-pct" style="color:#00d4ff;">88%</span></div>
+    <div class="skill-bar-track"><div class="skill-bar-fill" style="width:88%; background: linear-gradient(90deg, #00d4ff, #00d4ff80);"></div></div>
+  </div>
+  <div class="skill-bar-container scroll-reveal">
+    <div class="skill-bar-header"><span class="skill-bar-label">Frameworks &amp; Languages</span><span class="skill-bar-pct" style="color:#8b5cf6;">92%</span></div>
+    <div class="skill-bar-track"><div class="skill-bar-fill" style="width:92%; background: linear-gradient(90deg, #8b5cf6, #8b5cf680);"></div></div>
+  </div>
+  <div class="skill-bar-container scroll-reveal">
+    <div class="skill-bar-header"><span class="skill-bar-label">DevOps &amp; Infrastructure</span><span class="skill-bar-pct" style="color:#00d4ff;">83%</span></div>
+    <div class="skill-bar-track"><div class="skill-bar-fill" style="width:83%; background: linear-gradient(90deg, #00d4ff, #00d4ff80);"></div></div>
+  </div>
+  <div class="skill-bar-container scroll-reveal">
+    <div class="skill-bar-header"><span class="skill-bar-label">Databases &amp; Security</span><span class="skill-bar-pct" style="color:#8b5cf6;">78%</span></div>
+    <div class="skill-bar-track"><div class="skill-bar-fill" style="width:78%; background: linear-gradient(90deg, #8b5cf6, #8b5cf680);"></div></div>
+  </div>
+  <div class="skill-bar-container scroll-reveal">
+    <div class="skill-bar-header"><span class="skill-bar-label">Protocols &amp; APIs</span><span class="skill-bar-pct" style="color:#00d4ff;">87%</span></div>
+    <div class="skill-bar-track"><div class="skill-bar-fill" style="width:87%; background: linear-gradient(90deg, #00d4ff, #00d4ff80);"></div></div>
+  </div>
+
+  <div class="scroll-reveal" style="margin-top:2rem;">
+    <div><strong style="color: var(--text-primary); font-size: 0.9rem;">AI &amp; LLM Infrastructure</strong></div>
+    <div class="skill-tags">
+      <span class="skill-tag" style="color:#00d4ff; border-color:#00d4ff40; background:rgba(0,212,255,0.07);">Model Context Protocol (MCP)</span>
+      <span class="skill-tag" style="color:#00d4ff; border-color:#00d4ff40; background:rgba(0,212,255,0.07);">Custom Agents</span>
+      <span class="skill-tag" style="color:#00d4ff; border-color:#00d4ff40; background:rgba(0,212,255,0.07);">Gemini CLI</span>
+      <span class="skill-tag" style="color:#00d4ff; border-color:#00d4ff40; background:rgba(0,212,255,0.07);">Copilot CLI</span>
+      <span class="skill-tag" style="color:#00d4ff; border-color:#00d4ff40; background:rgba(0,212,255,0.07);">OpenAI API</span>
+      <span class="skill-tag" style="color:#00d4ff; border-color:#00d4ff40; background:rgba(0,212,255,0.07);">LangChain</span>
+    </div>
+    <div style="margin-top: 1rem;"><strong style="color: var(--text-primary); font-size: 0.9rem;">Frameworks &amp; Languages</strong></div>
+    <div class="skill-tags">
+      <span class="skill-tag" style="color:#8b5cf6; border-color:#8b5cf640; background:rgba(139,92,246,0.07);">Python</span>
+      <span class="skill-tag" style="color:#8b5cf6; border-color:#8b5cf640; background:rgba(139,92,246,0.07);">Java</span>
+      <span class="skill-tag" style="color:#8b5cf6; border-color:#8b5cf640; background:rgba(139,92,246,0.07);">Pytest</span>
+      <span class="skill-tag" style="color:#8b5cf6; border-color:#8b5cf640; background:rgba(139,92,246,0.07);">Playwright</span>
+      <span class="skill-tag" style="color:#8b5cf6; border-color:#8b5cf640; background:rgba(139,92,246,0.07);">Selenium</span>
+      <span class="skill-tag" style="color:#8b5cf6; border-color:#8b5cf640; background:rgba(139,92,246,0.07);">FastAPI</span>
+      <span class="skill-tag" style="color:#8b5cf6; border-color:#8b5cf640; background:rgba(139,92,246,0.07);">Streamlit</span>
+    </div>
+    <div style="margin-top: 1rem;"><strong style="color: var(--text-primary); font-size: 0.9rem;">DevOps &amp; Infrastructure</strong></div>
+    <div class="skill-tags">
+      <span class="skill-tag" style="color:#00d4ff; border-color:#00d4ff40; background:rgba(0,212,255,0.07);">Unix</span>
+      <span class="skill-tag" style="color:#00d4ff; border-color:#00d4ff40; background:rgba(0,212,255,0.07);">Shell Scripting</span>
+      <span class="skill-tag" style="color:#00d4ff; border-color:#00d4ff40; background:rgba(0,212,255,0.07);">Docker</span>
+      <span class="skill-tag" style="color:#00d4ff; border-color:#00d4ff40; background:rgba(0,212,255,0.07);">Jenkins</span>
+      <span class="skill-tag" style="color:#00d4ff; border-color:#00d4ff40; background:rgba(0,212,255,0.07);">Git</span>
+      <span class="skill-tag" style="color:#00d4ff; border-color:#00d4ff40; background:rgba(0,212,255,0.07);">CI/CD</span>
+      <span class="skill-tag" style="color:#00d4ff; border-color:#00d4ff40; background:rgba(0,212,255,0.07);">Linux</span>
+    </div>
+    <div style="margin-top: 1rem;"><strong style="color: var(--text-primary); font-size: 0.9rem;">Databases &amp; Security</strong></div>
+    <div class="skill-tags">
+      <span class="skill-tag" style="color:#8b5cf6; border-color:#8b5cf640; background:rgba(139,92,246,0.07);">PostgreSQL</span>
+      <span class="skill-tag" style="color:#8b5cf6; border-color:#8b5cf640; background:rgba(139,92,246,0.07);">RDBMS</span>
+      <span class="skill-tag" style="color:#8b5cf6; border-color:#8b5cf640; background:rgba(139,92,246,0.07);">Wireshark</span>
+      <span class="skill-tag" style="color:#8b5cf6; border-color:#8b5cf640; background:rgba(139,92,246,0.07);">Burp Suite</span>
+      <span class="skill-tag" style="color:#8b5cf6; border-color:#8b5cf640; background:rgba(139,92,246,0.07);">Network Monitoring</span>
+    </div>
+    <div style="margin-top: 1rem;"><strong style="color: var(--text-primary); font-size: 0.9rem;">Protocols &amp; APIs</strong></div>
+    <div class="skill-tags">
+      <span class="skill-tag" style="color:#00d4ff; border-color:#00d4ff40; background:rgba(0,212,255,0.07);">REST API</span>
+      <span class="skill-tag" style="color:#00d4ff; border-color:#00d4ff40; background:rgba(0,212,255,0.07);">Postman</span>
+      <span class="skill-tag" style="color:#00d4ff; border-color:#00d4ff40; background:rgba(0,212,255,0.07);">Swagger</span>
+      <span class="skill-tag" style="color:#00d4ff; border-color:#00d4ff40; background:rgba(0,212,255,0.07);">OCPP 1.6/2.0</span>
+      <span class="skill-tag" style="color:#00d4ff; border-color:#00d4ff40; background:rgba(0,212,255,0.07);">API Security</span>
+    </div>
+  </div>
+
+  <!-- ── Education ── -->
+  <div class="section-header scroll-reveal" id="education">
+    <i class="fas fa-graduation-cap"></i>
+    <span class="section-header-text">Education</span>
+    <div class="section-header-line"></div>
+  </div>
+  <div class="edu-card scroll-reveal">
+    <div class="edu-icon"><i class="fas fa-university"></i></div>
+    <div>
+      <div class="edu-degree">PGP, Cyber Security</div>
+      <div class="edu-institution">Indian Institute of Technology, Roorkee</div>
+      <div class="edu-duration"><i class="fas fa-calendar-alt"></i> Jul 2023 – Mar 2024</div>
+    </div>
+  </div>
+  <div class="edu-card scroll-reveal">
+    <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+    <div>
+      <div class="edu-degree">B.Tech, Electronics &amp; Communications Engineering</div>
+      <div class="edu-institution">Jaypee Institute Of Information Technology</div>
+      <div class="edu-duration"><i class="fas fa-calendar-alt"></i> 2017 – 2021</div>
+    </div>
+  </div>
+
+  <!-- ── Certifications ── -->
+  <div class="section-header scroll-reveal" id="certifications">
+    <i class="fas fa-certificate"></i>
+    <span class="section-header-text">Certifications</span>
+    <div class="section-header-line"></div>
+  </div>
+  <div class="cert-grid">
+    <span class="cert-badge scroll-reveal"><i class="fas fa-cog"></i> &nbsp;Learning Jenkins</span>
+    <span class="cert-badge scroll-reveal"><i class="fas fa-flask"></i> &nbsp;5 Common Test Failures</span>
+    <span class="cert-badge scroll-reveal"><i class="fas fa-code"></i> &nbsp;Data Structures and Algorithms – Coding Blocks</span>
+  </div>
+
+  <!-- ── Testimonials ── -->
+  <div class="section-header scroll-reveal" id="testimonials">
+    <i class="fas fa-quote-left"></i>
+    <span class="section-header-text">Testimonials</span>
+    <div class="section-header-line"></div>
+  </div>
+  <div class="testimonial-card scroll-reveal">
+    <div class="testimonial-quote">&ldquo;One of the most thorough QA engineers I've worked with — turns ambiguous bug reports into precise, reproducible test cases.&rdquo;</div>
+    <div class="testimonial-author"><strong>Placeholder Name</strong><span class="testimonial-role">Engineering Manager &middot; ChargePoint</span></div>
+  </div>
+  <div class="testimonial-card scroll-reveal">
+    <div class="testimonial-quote">&ldquo;Built internal tooling that took our regression cycle from days to hours. Genuinely force-multiplying work.&rdquo;</div>
+    <div class="testimonial-author"><strong>Placeholder Name</strong><span class="testimonial-role">Senior Software Engineer &middot; ChargePoint</span></div>
+  </div>
+
+  <!-- ── Writing ── -->
+  <div class="section-header scroll-reveal" id="writing">
+    <i class="fas fa-pen-nib"></i>
+    <span class="section-header-text">Writing</span>
+    <div class="section-header-line"></div>
+  </div>
+  <a class="project-card writing-card scroll-reveal" href="https://github.com/AbhiPra24" target="_blank" rel="noopener">
+    <div class="project-title">Building an MCP Server for Local Dev Tooling</div>
+    <div class="project-duration"><i class="fas fa-calendar-alt"></i> &nbsp;2026</div>
+    <p class="writing-summary">Notes on bridging LLM agents with private documentation and station simulators via the Model Context Protocol.</p>
+  </a>
+
+  <!-- ── Footer ── -->
+  <div class="site-footer">
+    <span class="brand">Abhinav Prakash</span>
+    &nbsp;·&nbsp; abhinavprakash616@gmail.com &nbsp;·&nbsp; +91 94575 48199<br>
+    <span>Made with ⚡ HTML, CSS &amp; vanilla JS</span>
+  </div>
+
+</div>
+
+<script src="js/terminal.js"></script>
+<script src="js/radar.js"></script>
+<script src="js/reveal.js"></script>
+<script>
+  document.getElementById('navToggle').addEventListener('click', () => {
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+  document.querySelectorAll('.topnav-links a').forEach((a) => {
+    a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+  });
+</script>
+</body>
+</html>
