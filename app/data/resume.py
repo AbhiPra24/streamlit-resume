@@ -159,22 +159,6 @@ RESUME_DATA = {
         },
     ],
 
-    # TODO: swap in real quotes/attributions before sharing.
-    "testimonials": [
-        {
-            "quote": "One of the most thorough QA engineers I've worked with — turns ambiguous bug reports into precise, reproducible test cases.",
-            "author": "Placeholder Name",
-            "role": "Engineering Manager",
-            "company": "ChargePoint",
-        },
-        {
-            "quote": "Built internal tooling that took our regression cycle from days to hours. Genuinely force-multiplying work.",
-            "author": "Placeholder Name",
-            "role": "Senior Software Engineer",
-            "company": "ChargePoint",
-        },
-    ],
-
     # TODO: link real posts/talks before sharing; remove the section if none exist yet.
     "writing": [
         {

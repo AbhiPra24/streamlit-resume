@@ -332,17 +332,6 @@ h1, h2, h3, h4, h5 { font-family: 'Inter', sans-serif; font-weight: 700; color: 
 }
 .cert-badge:hover { background: linear-gradient(135deg, rgba(0,212,255,0.12), rgba(139,92,246,0.12)); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,212,255,0.1); }
 
-/* ── Testimonials ── */
-.testimonial-card {
-  background: var(--bg-card); border: 1px solid var(--border-card); border-left: 3px solid var(--accent-cyan);
-  border-radius: var(--radius-card); padding: 1.3rem 1.4rem; margin-bottom: 1.2rem; transition: all 0.3s ease;
-}
-.testimonial-card:hover { border-left-color: var(--accent-purple); box-shadow: var(--shadow-card); }
-.testimonial-quote { color: var(--text-primary); font-size: 0.95rem; line-height: 1.7; font-style: italic; margin-bottom: 10px; }
-.testimonial-author { font-size: 0.85rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 2px; }
-.testimonial-author strong { color: var(--text-primary); }
-.testimonial-role { font-size: 0.78rem; color: var(--text-muted); }
-
 /* ── Download / print buttons ── */
 .btn-gradient {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;

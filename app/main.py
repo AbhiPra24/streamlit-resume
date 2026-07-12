@@ -40,7 +40,6 @@ from app.components.experience import render_experience
 from app.components.skills import render_skills
 from app.components.education import render_education
 from app.components.certifications import render_certifications
-from app.components.testimonials import render_testimonials
 from app.components.writing import render_writing
 
 # ── CSS ──────────────────────────────────────────────────────────────────────
@@ -76,7 +75,6 @@ with st.sidebar:
         ("fas fa-code", "Skills"),
         ("fas fa-graduation-cap", "Education"),
         ("fas fa-certificate", "Certifications"),
-        ("fas fa-quote-left", "Testimonials"),
         ("fas fa-pen-nib", "Writing"),
     ]
     for icon, label in nav_items:
@@ -115,7 +113,6 @@ render_experience(RESUME_DATA)
 render_skills(RESUME_DATA)
 render_education(RESUME_DATA)
 render_certifications(RESUME_DATA)
-render_testimonials(RESUME_DATA)
 render_writing(RESUME_DATA)
 
 # Footer
