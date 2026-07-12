@@ -1,4 +1,6 @@
-"""PDF export utility — triggers browser print dialog via JS."""
+"""PDF export utility — triggers browser print dialog via JS, or offers a real PDF download."""
+import pathlib
+import streamlit as st
 import streamlit.components.v1 as components
 
 
@@ -39,3 +41,22 @@ PRINT_BUTTON_HTML = """
 def render_pdf_button(height: int = 52) -> None:
     """Render a PDF download button that triggers window.print()."""
     components.html(PRINT_BUTTON_HTML, height=height)
+
+
+def render_resume_download_button(pdf_path: str) -> None:
+    """Offer a real PDF file download if it exists; silently no-op otherwise.
+
+    Complements render_pdf_button (browser print-to-PDF) with an actual file
+    download for visitors who just want the document, not a live page capture.
+    """
+    path = pathlib.Path(pdf_path)
+    if not path.exists():
+        return
+    st.download_button(
+        label="Download Resume (PDF)",
+        data=path.read_bytes(),
+        file_name=path.name,
+        mime="application/pdf",
+        icon=":material/download:",
+        width="stretch",
+    )

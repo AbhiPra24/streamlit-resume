@@ -11,6 +11,7 @@ RESUME_DATA = {
     "linkedin": "linkedin.com/in/abhipra24",
     "linkedin_url": "https://linkedin.com/in/abhipra24",
     "github_url": "https://github.com/AbhiPra24",
+    "resume_pdf_path": "app/assets/Abhinav_Prakash_Resume.pdf",
 
     "summary": [
         "Senior SDET & AI Automation Engineer with **5 years** of experience building high-performance test infrastructure, AI-driven developer tools, and shared engineering utilities for complex hardware-software ecosystems.",
@@ -135,5 +136,52 @@ RESUME_DATA = {
         {"label": "Faster Deployments", "value": "40%", "icon": "fas fa-rocket"},
         {"label": "Triage Time Reduction", "value": "30%", "icon": "fas fa-bullseye"},
         {"label": "Manual Effort Saved", "value": "25%", "icon": "fas fa-robot"},
+    ],
+
+    # TODO: personalize before sharing — placeholder copy, update monthly.
+    "now": {
+        "updated": "July 2026",
+        "items": [
+            "Deep in MCP (Model Context Protocol) server development for internal ChargePoint tooling — bridging LLMs with local dev environments and station simulators.",
+            "Exploring multi-agent orchestration patterns for automated test triage and CI/CD failure analysis.",
+            "Studying advanced OCPP 2.0.1 conformance edge cases for EV charging power-sharing (DLM) validation.",
+        ],
+    },
+
+    # TODO: replace with real repo data (or wire up the GitHub API) before sharing.
+    "github_projects": [
+        {
+            "name": "streamlit-resume",
+            "description": "This site — an interactive resume built with Streamlit, Plotly, and a dark-neon design system.",
+            "url": "https://github.com/AbhiPra24/streamlit-resume",
+            "language": "Python",
+            "stars": 0,
+        },
+    ],
+
+    # TODO: swap in real quotes/attributions before sharing.
+    "testimonials": [
+        {
+            "quote": "One of the most thorough QA engineers I've worked with — turns ambiguous bug reports into precise, reproducible test cases.",
+            "author": "Placeholder Name",
+            "role": "Engineering Manager",
+            "company": "ChargePoint",
+        },
+        {
+            "quote": "Built internal tooling that took our regression cycle from days to hours. Genuinely force-multiplying work.",
+            "author": "Placeholder Name",
+            "role": "Senior Software Engineer",
+            "company": "ChargePoint",
+        },
+    ],
+
+    # TODO: link real posts/talks before sharing; remove the section if none exist yet.
+    "writing": [
+        {
+            "title": "Building an MCP Server for Local Dev Tooling",
+            "url": "https://github.com/AbhiPra24",
+            "date": "2026",
+            "summary": "Notes on bridging LLM agents with private documentation and station simulators via the Model Context Protocol.",
+        },
     ],
 }

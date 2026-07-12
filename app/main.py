@@ -4,7 +4,6 @@ Abhinav Prakash | Senior SDET & AI Automation Engineer
 """
 import sys
 import os
-import base64
 
 # Ensure project root is on sys.path so `app.*` imports work when
 # Streamlit runs this file directly (e.g. `streamlit run app/main.py`)
@@ -28,16 +27,21 @@ st.set_page_config(
 )
 
 # ── Local imports (after set_page_config) ───────────────────────────────────
-from app.utils.helpers import load_css
+from app.utils.helpers import load_css, render_scroll_reveal_script
+from app.utils.pdf_export import render_pdf_button, render_resume_download_button
 from app.data.resume import RESUME_DATA
 from app.components.header import render_header
 from app.components.terminal import render_terminal
+from app.components.now import render_now
 from app.components.summary import render_summary
 from app.components.projects import render_projects
+from app.components.github_showcase import render_github_projects
 from app.components.experience import render_experience
 from app.components.skills import render_skills
 from app.components.education import render_education
 from app.components.certifications import render_certifications
+from app.components.testimonials import render_testimonials
+from app.components.writing import render_writing
 
 # ── CSS ──────────────────────────────────────────────────────────────────────
 load_css("app/styles/main.css")
@@ -64,12 +68,16 @@ with st.sidebar:
     nav_items = [
         ("fas fa-home", "Home"),
         ("fas fa-terminal", "Terminal"),
+        ("fas fa-satellite-dish", "Now"),
         ("fas fa-list-alt", "Summary"),
         ("fas fa-rocket", "Projects"),
+        ("fab fa-github", "GitHub"),
         ("fas fa-briefcase", "Experience"),
         ("fas fa-code", "Skills"),
         ("fas fa-graduation-cap", "Education"),
         ("fas fa-certificate", "Certifications"),
+        ("fas fa-quote-left", "Testimonials"),
+        ("fas fa-pen-nib", "Writing"),
     ]
     for icon, label in nav_items:
         st.markdown(
@@ -80,24 +88,8 @@ with st.sidebar:
     st.divider()
 
     st.markdown('**<i class="fas fa-download"></i> &nbsp;Download**', unsafe_allow_html=True)
-    # Print-to-PDF via browser — use base64 data URL (st.iframe requires src URL)
-    _pdf_html = """
-    <html>
-    <head>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    </head>
-    <body style="margin:0;padding:0;background:transparent;">
-    <button onclick="window.print()"
-            style="width:100%;padding:10px 0;border:none;border-radius:100px;
-                   background:linear-gradient(135deg,#00d4ff,#8b5cf6);
-                   color:#070b14;font-weight:700;font-size:14px;
-                   cursor:pointer;font-family:Inter,sans-serif;">
-        <i class="fas fa-file-pdf"></i> &nbsp;Save as PDF
-    </button>
-    </body></html>
-    """
-    _pdf_url = "data:text/html;base64," + base64.b64encode(_pdf_html.encode()).decode()
-    st.iframe(src=_pdf_url, height=50)
+    render_pdf_button()
+    render_resume_download_button(RESUME_DATA["resume_pdf_path"])
 
     st.divider()
     st.markdown(
@@ -115,12 +107,16 @@ with st.sidebar:
 # ── Main Content ──────────────────────────────────────────────────────────────
 render_header(RESUME_DATA)
 render_terminal()
+render_now(RESUME_DATA)
 render_summary(RESUME_DATA)
 render_projects(RESUME_DATA)
+render_github_projects(RESUME_DATA)
 render_experience(RESUME_DATA)
 render_skills(RESUME_DATA)
 render_education(RESUME_DATA)
 render_certifications(RESUME_DATA)
+render_testimonials(RESUME_DATA)
+render_writing(RESUME_DATA)
 
 # Footer
 st.markdown(
@@ -141,3 +137,5 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+
+render_scroll_reveal_script()

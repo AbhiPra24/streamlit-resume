@@ -1,6 +1,54 @@
-"""Skills section — animated progress bars + categorized tag pills."""
+"""Skills section — radar chart, animated progress bars + categorized tag pills."""
+import plotly.graph_objects as go
 import streamlit as st
 from app.utils.helpers import section_header
+
+
+def _render_radar_chart(skills: dict) -> None:
+    """Plotly radar/spider chart of proficiency across skill categories."""
+    categories = list(skills.keys())
+    values = [info["proficiency"] for info in skills.values()]
+    # Close the polygon by repeating the first point.
+    categories_closed = categories + [categories[0]]
+    values_closed = values + [values[0]]
+
+    fig = go.Figure()
+    fig.add_trace(
+        go.Scatterpolar(
+            r=values_closed,
+            theta=categories_closed,
+            fill="toself",
+            fillcolor="rgba(0, 212, 255, 0.12)",
+            line=dict(color="#00d4ff", width=2),
+            marker=dict(color="#8b5cf6", size=6),
+            name="Proficiency",
+        )
+    )
+    fig.update_layout(
+        polar=dict(
+            bgcolor="rgba(0,0,0,0)",
+            radialaxis=dict(
+                visible=True,
+                range=[0, 100],
+                showticklabels=True,
+                tickfont=dict(color="#64748b", size=10),
+                gridcolor="rgba(255,255,255,0.08)",
+                linecolor="rgba(255,255,255,0.08)",
+            ),
+            angularaxis=dict(
+                tickfont=dict(color="#e2e8f0", size=12),
+                gridcolor="rgba(255,255,255,0.08)",
+                linecolor="rgba(255,255,255,0.08)",
+            ),
+        ),
+        showlegend=False,
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)",
+        margin=dict(l=40, r=40, t=20, b=20),
+        height=380,
+        font=dict(family="Inter, sans-serif"),
+    )
+    st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
 
 
 def _skill_bar(label: str, pct: int, color: str) -> str:
@@ -22,6 +70,9 @@ def _skill_bar(label: str, pct: int, color: str) -> str:
 def render_skills(data: dict) -> None:
     section_header("fas fa-brain", "Skills")
     skills = data.get("skills", {})
+
+    if skills:
+        _render_radar_chart(skills)
 
     bars_html = "".join(
         _skill_bar(name, info["proficiency"], info["color"])
