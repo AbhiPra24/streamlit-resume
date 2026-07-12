@@ -1,0 +1,51 @@
+# Version control
+.git/
+.gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Tests / dev-only tooling — not needed in the production image
+tests/
+requirements-dev.txt
+.pytest_cache/
+.coverage
+htmlcov/
+playwright-report/
+test-results/
+.playwright/
+
+# Static GitHub Pages site — ships independently of the Streamlit container
+docs/
+
+# Docs / editor / OS cruft
+README.md
+CLAUDE.md
+CHANGELOG.md
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# Docker itself
+Dockerfile
+.dockerignore
+docker-compose.yml

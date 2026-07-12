@@ -1,0 +1,20 @@
+services:
+  streamlit-resume:
+    build: .
+    container_name: streamlit-resume
+    restart: unless-stopped
+    ports:
+      # Host 8501 is already taken by OverwatcherPI's dashboard container on
+      # this Pi — mapped to 8655 instead (next free slot after PortfolioPi's
+      # 8653/8654). Loopback-only by default; front it with a Caddy route
+      # (see pi-gateway) if you want a LAN-friendly hostname later.
+      - "127.0.0.1:8655:8501"
+    environment:
+      - STREAMLIT_SERVER_HEADLESS=true
+      - STREAMLIT_BROWSER_GATHER_USAGE_STATS=false
+    # Uncomment to live-edit app code without rebuilding the image:
+    # volumes:
+    #   - ./app:/app/app
+    # command: >
+    #   streamlit run app/main.py --server.port=8501 --server.address=0.0.0.0
+    #   --server.runOnSave=true
